@@ -1,0 +1,25 @@
+<div id="page-content-wrapper">
+    <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas" (click)='toggleSidebar()' [ngClass]="{'is-closed': isClosed, 'is-open': !isClosed}">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+    </button>
+    <div class="container">
+        <div *appUnless="onlyOdd">
+            <li class="list-group-item" [ngClass]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}" *ngFor="let even of evenNumbers">
+                {{ even }}
+            </li>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'blue'">This is directive para.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <app-jd-grid></app-jd-grid>
+            </div>
+        </div>
+
+    </div>
+</div>
